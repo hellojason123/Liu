@@ -1,0 +1,1130 @@
+
+Function Life_Cycle(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+
+
+
+sFileL = y & "legacy_life_cycle.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L = 5
+nRowCount_L = 4
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_LifeCycle").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+tFileL = y & "cbs_life_cycle_count.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL)
+nColCount_L = 8
+nRowCount_L = 4
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_LifeCycle").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+eFileL = y & "error_life_cycle.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L = 9
+nRowCount_L = 4
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_LifeCycle").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+End Function
+
+
+Function Prepaid_Balance(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+Dim myArray(4)
+Dim myArray1(2)
+
+
+specialFileL = y & "legacy_balance.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(specialFileL)
+nColCount_L1 = 8
+nRowCount_L1 = 5
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+nColCount_L1 = 8
+If strInput_comp = 1 Then
+       
+Else
+ nRowCount_L1 = nRowCount_L1 + 1
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 1 To UBound(myArray)
+
+Worksheets("DTN_PrepaidBalance").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+nColCount_L1 = nColCount_L1 + 1
+Next f
+
+End If
+
+Loop
+
+End With
+
+
+
+tFileL = y & "cbs_balance.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL)
+nColCount_L2 = 17
+nRowCount_L2 = 5
+
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+nColCount_L2 = 17
+If strInput_comp = 1 Then
+       
+Else
+ nRowCount_L2 = nRowCount_L2 + 1
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray1(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 1 To UBound(myArray1)
+
+Worksheets("DTN_PrepaidBalance").Cells(nRowCount_L2, nColCount_L2) = myArray1(f)
+nColCount_L2 = nColCount_L2 + 1
+Next f
+
+End If
+
+Loop
+
+End With
+
+
+eFileL = y & "error_balance.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L1 = 19
+nRowCount_L1 = 5
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+nColCount_L1 = 19
+If strInput_comp = 1 Then
+       
+Else
+ nRowCount_L1 = nRowCount_L1 + 1
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray1(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 1 To UBound(myArray1)
+
+Worksheets("DTN_PrepaidBalance").Cells(nRowCount_L1, nColCount_L1) = myArray1(f)
+nColCount_L1 = nColCount_L1 + 1
+Next f
+
+End If
+
+Loop
+
+End With
+
+End Function
+
+Function Main_Offer(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+Dim myArray(2)
+
+
+sFileL = y & "legacy_main_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L = 5
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_MainOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+tFileL = y & "cbs_main_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL)
+nColCount_L1 = 8
+nRowCount_L1 = 5
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+
+nRowCount_L1 = nRowCount_L1 + 1
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+
+For f = 1 To UBound(myArray)
+
+If myArray(1) = 13001201 Then
+f = f + 1
+m = Worksheets("DTN_LifeCycle").Cells(5, 5).value
+n = myArray(f) - m
+Worksheets("DTN_MainOffer").Cells(nRowCount_L1, nColCount_L1) = n
+
+Else
+f = f + 1
+Worksheets("DTN_MainOffer").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+
+End If
+
+Next f
+
+
+
+End If
+
+Loop
+End With
+
+
+
+
+
+
+
+eFileL = y & "error_main_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L = 9
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_MainOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+End Function
+
+Function Add_Offer(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+
+
+
+sFileL = y & "legacy_add_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L = 6
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_AddtionalOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+tFileL = y & "cbs_add_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL)
+nColCount_L = 10
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_AddtionalOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+
+eFileL = y & "error_add_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L = 11
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_AddtionalOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+End Function
+
+
+Function Rbt_Offer(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+
+
+
+sFileL = y & "legacy_rbt_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L = 5
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_RBTOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+tFileL = y & "cbs_rbt_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL)
+nColCount_L = 8
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_RBTOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+
+
+eFileL = y & "error_rbt_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L = 9
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_RBTOffer").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+End Function
+
+
+
+Function DTN_Bonus(x, y)
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+
+
+sFileL = y & "legacy_bonus.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L = 6
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Bonus").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+tFileL = y & "cbs_bonus_offer.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL)
+nColCount_L = 9
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Bonus").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+
+
+sFileL1 = y & "legacy_bonus_accum.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL1)
+nColCount_L = 6
+nRowCount_L = 47
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Bonus").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+tFileL1 = y & "cbs_bonus_accum.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL1)
+nColCount_L = 9
+nRowCount_L = 47
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Bonus").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+
+End With
+
+
+eFileL = y & "error_bonus.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L = 10
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Bonus").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+
+
+
+eFileL1 = y & "error_bonus_accum.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL1)
+nColCount_L = 10
+nRowCount_L = 47
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Bonus").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+End Function
+
+
+
+Function DTN_other(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+
+
+sFileL = y & "legacy_other.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L = 5
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Other").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+tFileL = y & "cbs_other.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(tFileL)
+nColCount_L = 8
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Other").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+
+eFileL = y & "error_other.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L = 9
+nRowCount_L = 5
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("DTN_Other").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+End Function
+
+
+
+
+Function DTN_Fnf(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+Dim myArray(3)
+
+
+
+sFileL = y & "legacy_fnf.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L1 = 6
+nRowCount_ref = 5
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+If strInput_comp = 1 Then
+       
+Else
+nRowCount_ref = nRowCount_ref + 1
+ nRowCount_L1 = nRowCount_ref
+ 
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 2 To UBound(myArray)
+
+Worksheets("DTN_FnF").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+ nRowCount_L1 = nRowCount_L1 + 26
+Next f
+End If
+
+Loop
+
+
+End With
+
+
+
+tFileL = y & "cbs_fnf.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L1 = 9
+nRowCount_ref = 5
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+If strInput_comp = 1 Then
+       
+Else
+nRowCount_ref = nRowCount_ref + 1
+ nRowCount_L1 = nRowCount_ref
+ 
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 2 To UBound(myArray)
+
+Worksheets("DTN_FnF").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+ nRowCount_L1 = nRowCount_L1 + 26
+Next f
+End If
+
+Loop
+
+End With
+
+
+
+
+eFileL = y & "error_fnf.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(eFileL)
+nColCount_L1 = 10
+nRowCount_ref = 5
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+If strInput_comp = 1 Then
+       
+Else
+nRowCount_ref = nRowCount_ref + 1
+ nRowCount_L1 = nRowCount_ref
+ 
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 2 To UBound(myArray)
+
+Worksheets("DTN_FnF").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+ nRowCount_L1 = nRowCount_L1 + 26
+Next f
+End If
+
+Loop
+
+
+End With
+End Function
+
+
+Function DTN_Err(x, y)
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+Dim myArray(3)
+
+
+specialFileL = y & "error.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(specialFileL)
+nColCount_L1 = 2
+nRowCount_L1 = 31
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+nColCount_L1 = 2
+If strInput_comp = 1 Then
+       
+Else
+ nRowCount_L1 = nRowCount_L1 + 1
+a_L = Split(strInput_L, ":")
+j = 0
+For i = 0 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 0 To UBound(myArray)
+
+Worksheets("DTN_ERROR").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+nColCount_L1 = nColCount_L1 + 1
+Next f
+
+End If
+
+Loop
+
+End With
+
+
+
+custFileL = y & "legacy_cust.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(custFileL)
+nColCount_L = 4
+nRowCount_L = 39
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L(UBound(a_L))
+Worksheets("Summary").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+End Function
+
+Function cug_abacus(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+Dim myArray(2)
+
+
+
+sFileL = y & "legacy_cug.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L1 = 6
+nRowCount_ref = 5
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+If strInput_comp = 1 Then
+       
+Else
+nRowCount_ref = nRowCount_ref + 1
+ nRowCount_L1 = nRowCount_ref
+ 
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 1 To UBound(myArray)
+
+Worksheets("DTN_CUG").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+ nRowCount_L1 = nRowCount_L1 + 8
+Next f
+End If
+
+Loop
+
+
+End With
+
+
+
+tFileL = y & "cbs_cug.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(sFileL)
+nColCount_L1 = 9
+nRowCount_ref = 5
+
+Do Until oFS.AtEndOfStream
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+If strInput_comp = 1 Then
+       
+Else
+nRowCount_ref = nRowCount_ref + 1
+ nRowCount_L1 = nRowCount_ref
+ 
+a_L = Split(strInput_L, ":")
+j = 1
+For i = 1 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 1 To UBound(myArray)
+
+Worksheets("DTN_CUG").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+ nRowCount_L1 = nRowCount_L1 + 8
+Next f
+End If
+
+Loop
+
+End With
+End Function
+
+
+Function err_details(x, y)
+
+
+Dim oFSO As New FileSystemObject
+Dim oFS
+Dim myArray(1)
+
+
+specialFileL = y & "err_detail.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(specialFileL)
+nColCount_L1 = 1
+nRowCount_L1 = 1
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+nColCount_L1 = 1
+If strInput_comp = 1 Then
+       
+Else
+ nRowCount_L1 = nRowCount_L1 + 1
+a_L = Split(strInput_L, ":")
+j = 0
+For i = 0 To UBound(a_L)
+myArray(j) = a_L(i)
+j = j + 1
+Next i
+
+For f = 0 To UBound(myArray)
+
+Worksheets("ERR_DETAIL").Cells(nRowCount_L1, nColCount_L1) = myArray(f)
+nColCount_L1 = nColCount_L1 + 1
+Next f
+
+End If
+
+Loop
+
+End With
+
+dupFileL = y & "dup_amount.unl"
+With ThisWorkbook
+Set oFS = oFSO.OpenTextFile(dupFileL)
+nColCount_L = 5
+nRowCount_L = 16
+
+Do Until oFS.AtEndOfStream
+
+
+strInput_L = oFS.ReadLine
+strInput_comp = InStr(1, strInput_L, "[")
+
+If strInput_comp = 1 Then
+       
+Else
+a_L = Split(strInput_L, ":")
+
+ nRowCount_L = nRowCount_L + 1
+ strOutput = a_L
+Worksheets("DTN_ERROR").Cells(nRowCount_L, nColCount_L) = strOutput
+
+End If
+
+Loop
+End With
+
+
+End Function
